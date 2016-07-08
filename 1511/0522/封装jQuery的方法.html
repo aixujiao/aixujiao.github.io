@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封装jQuery的方法</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li id="list">4</li>
+		<li>5</li>
+	</ul>
+	<script>
+		function $(selector){
+			this.dom = document.getElementById(selector);
+		}
+
+		$.prototype = {
+			click:function(fun){
+				this.dom.onclick = fun;
+			},
+			index:function(){
+				var arr = this.dom.parentNode.children;
+				for(var i = 0;i<arr.length;i++){
+					if(arr[i] ==  this.dom){
+						return i
+					}
+				}
+			},
+			siblings:function(){
+				var newArr = [];
+				var arrList = this.dom.parentNode.children;
+				for(var i = 0;i<arrList.length;i++){
+					if(arrList[i] != this.dom){
+						newArr.push(arrList[i]);
+					}
+				}
+
+				return newArr;
+			},
+		};
+
+		var list = new $("list");
+		list.click(function(){
+			console.log(list.siblings());
+		})
+		// new $("btn").click(function(){
+		// 	alert("hello")
+		// })
+	</script>
+</body>
+</html>

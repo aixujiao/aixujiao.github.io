@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#pic
+		{
+			position: absolute;
+			width: 950px;
+			height: 700px;
+		}
+		#btn
+		{
+			position: relative;
+			top:680px;
+			left:340px;
+		}
+		.link
+		{
+			float: left;
+			background-color:#555;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			list-style: none;
+			text-align: center;
+			line-height: 16px;
+			margin-right: 4px;
+			color:#fff;
+		}
+		#btn .bjs
+		{
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<img src="images/1.jpg" id="pic">
+	<ul id="btn">
+		<li class="link">1</li>
+		<li class="link">2</li>
+		<li class="link">3</li>
+		<li class="link">4</li>
+	</ul>
+
+
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#btn li").click(function(){
+			var index=$(this).index(); 
+			var src="images/"+(index+1)+".jpg";
+			$("#pic").attr("src",src);
+			// $(this).css("background-color","red");
+			// $(this).siblings().css("background-color","#555");
+			$(this).addClass("bjs");
+			$(this).siblings().removeClass("bjs");
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时抢购</title>
+	<style>
+		.box{
+			display: block;
+			width: 80px;
+			height: 30px;
+			background-color: #aaa;
+			border: 1px solid #555;
+			text-decoration: none;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			cursor:default;
+		}
+		.active{
+			background-color: #f00;
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span id="hours"></span>:
+		<span id="minutes"></span>:
+		<span id="seconds"></span>
+	</div>
+	<a href="#" class="box">点击抢购</a>
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		var targetTime = [18,37,00];
+		var targetHours;
+		var targetMinutes;
+		var targetseconds;
+
+
+		var t = setInterval(getTargetTime,1000);
+		function getTargetTime(){
+			var dateNow=new Date()
+			var hours = dateNow.getHours();
+			var minutes = dateNow.getMinutes();
+			var seconds = dateNow.getSeconds();
+
+			targetHours=targetTime[0] - hours;
+			if(targetTime[1] >= minutes){
+				targetMinutes=targetTime[1] - minutes;
+			}else{
+				targetMinutes = 60 + targetTime[1] - minutes;
+				targetHours-=1;
+			}
+			if(targetTime[2] >= seconds){
+				targetseconds = targetTime[2] - seconds;
+			}else{
+				targetseconds = 60 + targetTime[2] - seconds;
+				targetMinutes-= 1;
+			}
+			$("#hours").text(targetHours);
+			$("#minutes").text(targetMinutes);
+			$("#seconds").text(targetseconds);
+			if(targetHours==0&&targetMinutes==0&&targetseconds==0){
+		clearInterval(t);
+		$(".box").addClass("active");
+	}
+		}	
+getTargetTime()
+			
+
+	</script>
+</body>
+</html>

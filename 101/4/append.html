@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0px;padding:0px;}
+	</style>
+</head>
+<body>
+	<input type="text" id='txt'>
+	<input type="button" id='btn' value='添加元素'>
+	<ul id='list'>
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>柠檬</li>
+	</ul>
+
+	<script type='text/javascript' src='../../jquery-1.11.1.js'></script>
+	<script type='text/javascript'>
+	// 点击#btn输入文本在列表中添加输入的文本
+		$('#btn').click(function(){
+			var val=$('#txt').val();
+			$('#list').append('<li>'+val+'</li>')
+		})
+	</script>
+</body>
+</html>

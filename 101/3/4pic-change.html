@@ -1,0 +1,71 @@
+8<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0px;}
+	*{padding: 0px;}
+		.dingwei
+		{
+			width: 335px;
+			height: 222px;
+			margin:0 auto;
+		}
+		#pic{position: absolute;}
+		.subnav{position: relative;
+			left:105px;
+			top: 195px;
+		}
+		.btn
+		{
+			cursor:pointer;
+		}
+		.list li
+		{
+			list-style: none;
+			height: 18px;
+			width: 18px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 20px;
+
+			float: left;
+		}
+		.color{background-color: red;}
+	</style>
+</head>
+<body>
+	<div class="dingwei">
+	<img src="image/1.jpg" id="pic">
+	<div class="subnav">
+		<ul class='list'>
+			<li class='btn' id='btn' >1</li>
+			<li class='btn' id='btn2'>2</li>
+			<li class='btn' id='btn3'>3</li>
+			<li class='btn' id='btn4'>4</li>
+		</ul>
+	</div>
+
+
+
+
+	 
+	<script src='../../jquery-1.11.1.js'></script>
+	<script>
+	// 定位.bnt
+		$('.btn').click(function() {
+			// 输入一个变量index点击这个变量路径为image+index+1+.jpg 以attr改变图片属性
+			var index=$(this).index(); 
+			var src='image/'+(index+1)+'.jpg';
+			$('#pic').attr('src',src)
+			// 图片轮播
+		$(this).addClass('color');
+		$(this).siblings().removeClass('color');
+			// 点击变色
+		})
+	</script>
+</div>
+	
+</body>
+</html>

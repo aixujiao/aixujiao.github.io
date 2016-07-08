@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加节点</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt">
+		<input type="button" id="btn" value="添加">
+	</form>
+	<ul id="list">
+		<li>苹果<span class="del"> 删除</span></li>
+		<li>柠檬<span class="del"> 删除</span></li>
+		<li>香蕉<span class="del"> 删除</span></li>
+	</ul>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var value=$("#txt").val();
+			var li="<li>"+value+"</li>";
+			$("#list").append(li);
+		})
+		$(".del").click(function(){
+			$(this).parent().remove()
+		})
+	</script>
+</body>
+</html>

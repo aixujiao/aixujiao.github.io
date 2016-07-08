@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0px;
+		padding: 0px;}
+		#list li{
+			width: 150px;
+			height: 30px;
+			float: left;
+			background-color: black;
+			color:#555;
+			text-align: center;
+			line-height: 30px;
+			list-style: none;
+		}
+
+		.viex
+		{
+			width: 600px;
+			height: 400px;
+			border-left:1px dashed white;
+			border-right:1px dashed white;
+			border-bottom:1px dashed white;
+			overflow: hidden;
+			clear:fixed;
+		}
+		.box
+		{
+			width: 600px;
+			height: 400px;
+			display:none;
+		}
+		#box1
+		{
+			background-color: pink;
+			display: block;
+		}
+		#box2
+		{
+			background-color: yellow;
+		}
+		#box3
+		{
+			background-color: #0f0;
+		}
+		#box4
+		{
+			background-color: #0ff;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>页面1</li>
+		<li>页面2</li>
+		<li>页面3</li>
+		<li>页面4</li>
+	<ul>
+	
+	<div class="view">
+		<div class="box" id="box1"></div>
+		<div class="box" id="box2"></div>
+		<div class="box" id="box3"></div>
+		<div class="box" id="box4"></div>
+	</div>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#list li").click(function(){
+			var index=$(this).index()
+			$(".box").eq(index).css("display","block").siblings().css("display","none");
+		})
+	</script>
+</body>
+</html>

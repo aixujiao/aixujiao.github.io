@@ -1,0 +1,60 @@
+p<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="button" value="按钮" id="btn">
+
+	<ul>
+		<li class="list">第一个</li>
+		<li class="list">第二个</li>
+		<li class="list">第三个</li>
+	</ul>
+
+	<script type="text/javascript">
+		//返回值是一个DOM对象
+		var oBtn = document.getElementById("btn");
+
+		oBtn.onclick = function(){
+			alert("你好");
+		}
+
+		//返回值是一个数组
+		var aList = document.getElementsByClassName("list");
+		for(var i = 0;i<aList.length;i++){
+			aList[i].onclick = (function(x){
+				return function(){
+					console.log(x);
+				}
+			})(i)
+			// aList[i].onclick = function (){
+			// 	console.log(this.innerHTML)
+			// }
+		}
+
+
+		//document.getElementsByTagName();  返回数组
+
+		//立即执行函数  闭包
+
+		// var x = (function(str){
+		// 	return function(){
+		// 		return str;
+		// 	};
+		// })("nihao")
+
+		// console.log(x);
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

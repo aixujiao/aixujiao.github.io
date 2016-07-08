@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	.list li{
+		float: left;
+		padding: 0px 15px;
+		list-style: none;
+		display: block;
+	}
+	.bor{
+		border-right: 2px solid blue;
+	}
+	.list{
+		position: fixed;
+		top:0px;
+	}
+	.btn{
+		width: 40px;
+		background-color: #fff;
+		text-align: center;
+		position: fixed;
+		top:70%;
+		right:20px;
+	}
+	
+	.top{display:none;}
+		.header{
+			height: 200px;
+			background-color: mistyrose;
+			}
+		.banner{
+			height: 400px;
+			background-color: #0f0;
+		}
+		.main{
+			height: 800px;
+			background-color: yellow;
+		}
+		.footer{
+			height: 300px;
+			background-color: #0ff;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="header">
+		<ul class="list">
+			<li class="bor"><a href=".header">header</a></li>
+			<li class="bor"><a href=".banner">banner</a></li>
+			<li class="bor"><a href=".main">main</a></li>
+			<li class="bor"><a href=".footer">footer</a></li>      
+		</ul>
+		<div class="btn top"><h3>回</br>到</br>顶</br>部</h3></div>
+	</div>
+	<div class="banner"></div>
+	<div class="main"></div>
+	<div class="footer"></div>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(window).scroll(function(){
+			var scrollTop=$(this).scrollTop()
+			if (scrollTop>50){ 
+
+
+
+
+
+
+				
+				$(".btn").removeClass("top");
+		}
+			else{
+				$(".btn").addClass("top");
+			}
+		})
+
+		$(".list li a").click(function(){
+			var href=$(this).attr("href");
+			var offsetTop = $(href).offset().top;
+			$("html,body").animate({scrollTop:offsetTop},1000);
+			return false;
+		})
+	</script>
+</body>
+</html>

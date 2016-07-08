@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返回顶部</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.btn{
+		line-height: 30px;
+		color:blue;
+		position:fixed;
+		bottom: 40px;
+		right:40px;
+		display: none;
+		cursor: pointer;
+	}
+	.inner{
+		background-color: #000;
+		background: rgba(5,5,5,0);
+		width: 100%;
+		height: 100px;
+		position: fixed;
+		top:0px;
+	}
+	#list{
+		float: right;
+		padding-right: 70px;
+	}
+	.oli{
+		list-style: none;
+		display: block;
+		float: left;
+		font-size: 20px;
+		padding-left: 20px;
+		line-height:100px; 
+	}
+	.oli a{
+		color:#fff;
+		text-decoration: none;
+	}
+	.header{
+		background-color: #555;
+		width: 100%;
+		height: 800px;
+	}
+	.banner{
+		background-color: #888;
+		width: 100%;
+		height: 800px;
+	}
+	.main{
+		background-color: #999;
+		width: 100%;
+		height: 800px;
+	}
+	.footer{
+		background-color: #333;
+		width: 100%;
+		height: 800px;
+	}
+	</style>
+</head>
+<body>
+	<div class="inner">
+		<ul id="list">
+			<li class="oli"><a href=".header">header</a></li>
+			<li class="oli"><a href=".banner">banner</a></li>
+			<li class="oli"><a href=".main">main</a></li>
+			<li class="oli"><a href=".footer">footer</a></li>
+		</ul>
+	</div>
+	<div class="header"></div>
+	<div class="banner"></div>
+	<div class="main"></div>
+	<div class="footer"></div>
+	<div class="btn">回 到</br>顶 部</div>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(window).scroll(function(){
+			$(".btn").css("display","block")
+		})
+		$(".btn").click(function(){
+       		$('body,html').animate({ scrollTop: 0 }, 200);
+		})
+		$("#list li a").click(function(){
+			var href = $(this).attr("href");
+			var offsetTop = $(href).offset().top;
+				console.log(offsetTop)
+			$("html,body").animate({scrollTop:offsetTop},1000);
+			return false;
+		})
+
+	</script>
+</body>
+</html>

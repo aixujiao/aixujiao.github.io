@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加节点">
+	<ul id="list">
+		<li>香蕉<span class="delete"> 删除</span></li>
+		<li>苹果<span class="delete"> 删除</span></li>
+		<li>鸭梨<span class="delete"> 删除</span></li>
+	</ul>
+
+	<script type="text/javascript">
+		//获取
+		var oTxt = document.getElementById("txt");
+		var oBtn = document.getElementById("btn");
+		var oList = document.getElementById("list");
+
+		oBtn.onclick = function(){
+			//添加
+			var oLi = document.createElement("li");
+			var oSpan = document.createElement("span");
+			var txtNode = document.createTextNode(oTxt.value);
+			var txtDel = document.createTextNode(" 删除");
+			oSpan.className = "delete";
+			oSpan.appendChild(txtDel);
+			oLi.appendChild(txtNode);
+			oLi.appendChild(oSpan);
+			oList.appendChild(oLi);
+
+		}
+
+		oList.onclick = function(event){
+			var elem = event.target;
+			console.log(elem);
+			if(elem.className == "delete"){
+				oList.removeChild(elem.parentNode);
+			}
+		}
+
+
+
+		// var aSpan = document.getElementsByClassName("delete");
+		// for(var i = 0 ;i <aSpan.length;i++){
+		// 	aSpan[i].onclick = function(){
+
+		// 		oList.removeChild(this.parentNode);  //删除节点：
+
+		// 	}
+		// }
+
+
+	</script>
+</body>
+</html>

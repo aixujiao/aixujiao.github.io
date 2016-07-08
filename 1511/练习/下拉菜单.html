@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#list{
+			list-style:none;
+			background-color:#888;
+		}
+		.btn{
+			float:left;
+			width:180px;
+			height:50px;
+			background-color:black; 
+			text-align:center;
+			line-height:48px;
+		}
+		a{
+			text-decoration: none;
+			color:#555;
+			display:block;
+			width:180px;
+			height:50px;
+		}
+		.nav{
+			background-color: #888;
+			list-style: none;
+		}
+		.nav{
+			display: none;
+
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="btn">
+			<a href="#">菜单一</a>
+			<ul class="nav">
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+			</ul>
+		</li>
+		<li class="btn">
+			<a href="#">菜单二</a>
+			<ul class="nav">
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+			</ul>
+		</li>
+		<li class="btn">
+			<a href="#">菜单三</a>
+			<ul class="nav">
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+				<li>things</li>
+			</ul>
+		</li>
+	</ul>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(".btn a").mouseenter(function(){
+			$(this).parent().find(".nav").stop().slideDown(500);
+		});
+		$(".btn a").mouseleave(function(){
+			$(this).parent().find(".nav").stop().slideUp(500);
+		})
+	</script>
+</body>
+</html>

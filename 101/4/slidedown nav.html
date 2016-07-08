@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+ul{list-style:none;
+  background:#555;
+  
+  }
+.nav{float:left;
+  width:80px;
+  height:30px;
+  background:black; 
+  text-align:center;
+  line-height:28px;}
+a{display:block;
+  width:80px;
+  height:30px;
+  text-decoration: none;
+  color:#fff;
+}
+.list{display:none;}
+
+</style>
+
+</head>
+
+<body>
+<ul id="nav">
+  <li class="nav">
+      <a href="#">水果</a>
+      <ul class="list">
+        <li>柠檬</li>
+        <li>香蕉</li>
+        <li>芒果</li>
+        <li>桃子</li>
+      </ul>
+    </li>
+    <li class="nav">
+      <a href="#">蔬菜</a>
+      <ul  class="list">
+        <li>辣椒</li>
+        <li>黄瓜</li>
+        <li>土豆</li>
+        <li>茄子</li>
+      </ul>
+    </li>
+    <li class="nav">
+      <a href="#">颜色</a>
+      <ul class="list">
+        <li>红色</li>
+        <li>绿色</li>
+        <li>粉色</li>
+        <li>黄色</li>
+      </ul>
+    </li>
+</ul>
+  <script type="text/javascript" src="../../jquery-1.11.1.js"></script> 
+
+  <script type="text/javascript"> 
+
+ // 鼠标滑过a标签时ul下拉
+
+      $("a").mouseenter(function(){
+        $(this).parent().find("ul").stop().slideDown(500);
+         
+  })
+      // 鼠标离开li标签时ul上卷
+      $("li").mouseleave(function(){
+    $(this).parent().find("ul").stop().slideUp(500);
+  })
+</script>
+</body>
+</html>

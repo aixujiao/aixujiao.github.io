@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击滚动轮播图</title>
+	<style>
+		.view
+		{
+			width: 240px;
+			height: 240px;
+			
+			overflow: hidden;
+			position: absolute;
+		}
+		.box
+		{
+			width: 1200px;
+			height: 240px;
+		}
+		.list
+		{
+			float: left;
+			list-style: none;
+			background-color: #888;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 16px;
+			margin-right: 3px;
+			position: relative;
+			top:236px;
+			left: 35px;
+		}
+		.pic
+		{
+			float: left;
+		}
+		.color{
+			background-color: mistyrose;
+		}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<div class="box">
+			<img src="image/1.jpg" class="pic">
+			<img src="image/2.jpg" class="pic">
+			<img src="image/3.jpg" class="pic">
+			<img src="image/4.jpg" class="pic">
+			<img src="image/5.jpg" class="pic">
+		</div>
+	</div>
+	<ul id="btn">
+		<li class="list">1</li>
+		<li class="list">2</li>
+		<li class="list">3</li>
+		<li class="list">4</li>
+		<li class="list">5</li>
+	</ul>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#btn .list").click(function(){
+			var index=$(this).index();
+			var mleft=-240*index;
+			$(".box").animate({"margin-left":mleft});
+			$()
+		});
+	</script>
+</body>
+</html>

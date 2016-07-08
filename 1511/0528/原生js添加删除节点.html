@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原生js添加删除节点</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加节点">
+	<ul id="list">
+		<li>香蕉 <span class="del">删除</span></li>
+		<li>苹果 <span class="del">删除</span></li>
+		<li>鸭梨 <span class="del">删除</span></li>
+	</ul>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+	//one也是绑定事件，和bind相似只触发一次；.click和.bind是一样的
+		$("#btn").bind("click",function(){
+			var li = "<li>" + $("#txt").val() + "<span class=\"del\"> 删除</span></li>";
+			$("#list").append(li);
+		})
+
+		
+
+		$("#list").delegate(".del","click",function(){
+			$(this).parent().remove()
+		})
+
+
+
+		// var oTxt = document.getElementById("txt");
+		// var oBtn = document.getElementById("btn");
+		// var oList = document.getElementById("list");
+		// oBtn.onclick = function(){
+		// 	var val = oTxt.value;
+		// 	var newLi = document.createElement("li");
+		// 	var newSpan = document.createElement("span");
+		// 	var newTxt = document.createTextNode(val);
+		// 	newSpan.className = "del";
+		// 	newSpan.innerHTML = " 删除";
+		// 	newLi.appendChild(newTxt);
+		// 	newLi.appendChild(newSpan);
+		// 	oList.appendChild(newLi);
+		// }
+		// oList.onclick = function(event){
+		// 	var target = event.target;
+		// 	if(target.className == "del"){
+		// 		oList.removeChild(target.parentNode);
+		// 	}
+		// }
+
+	</script>
+</body>
+</html>

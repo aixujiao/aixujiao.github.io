@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		//函数嵌套会形成一个闭包
+
+		function outFun(){
+			var x = 10;
+			function inFun(){
+				return x;
+			}
+			return inFun;
+		}
+
+		var fun1 = outFun();
+
+		var x = fun1();
+		console.log(fun1);
+		console.log(x);
+
+		//作用域：函数的外部不能直接访问函数内部的变量或函数
+
+		//销毁机制:内部函数没有执行完，外部函数不会被销毁。
+
+		//作用域链：每一个函数都会创建一个执行环境（作用域）
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

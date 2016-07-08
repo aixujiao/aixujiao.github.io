@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加法运算</title>
+</head>
+<body>
+	<input type="text" id="add1">+
+	<input type="text" id="add2">=
+	<input type="text" id="he">
+	<input type="button" value="计算" id="jsuan">
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#jsuan").click(function(){
+			var add1=$("#add1").val();
+			var add2=$("#add2").val();
+			var he=Number(add1)+Number(add2);
+			$("#he").val(he);
+		})
+
+	</script>
+</body>
+</html>

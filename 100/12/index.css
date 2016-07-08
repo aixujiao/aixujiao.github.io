@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;}
+.box
+{
+	background-color: gold;
+	width: 400px;
+	height: 100px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 100px;
+}

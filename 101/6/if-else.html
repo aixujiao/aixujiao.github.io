@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="shuru"/>
+	<input type="button" id="btn" value="输出">
+
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var src= Number($("#shuru").val());
+			if (src>=0 && src<=10){
+				alert("0~10");
+			}else if (src>10 && src<=20){
+				alert("10~20");
+			}else if (src>20 && src<=30){
+				alert("20~30");
+			}else if (src>30 && src<=40){
+				alert("30~40");
+			}else if (src>40 && src<=50){
+				alert("40~50");
+			}else
+				alert("其他数值");
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.btn
+		{
+			float: left;
+			width: 150px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			border:1px solid yellow;
+			list-style: none;
+			overflow: hidden;
+		}
+		.btn a
+		{
+			display: block;
+			width: 150px;
+			height: 40px;
+			background-color: pink;
+		}
+		.change
+		{
+			clear:both;
+			display: block;
+			text-align: center;
+			line-height: 40px;
+			background-color: #0f0;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="btn">
+			<span class="change">home</span>
+			<a href="#">home</a>
+		</li>
+		<li class="btn">
+			<span class="change">about</span>
+			<a href="#">about</a>
+		</li>
+		<li class="btn">
+			<span class="change">number</span>
+			<a href="#">number</a>
+		</li>
+	</ul>
+
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(".change").mouseenter(function(){
+			$(this).stop().animate({"margin-top":"-40px"},500);
+		}).mouseleave(function(){
+			$(this).stop().animate({"margin-top":"0"},500)
+		})
+	</script>
+</body>
+</html>	

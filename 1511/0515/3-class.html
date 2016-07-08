@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<ul>
+		<li></li>
+		<li></li>
+		<li id="test" class="active bgc"></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script type="text/javascript">
+
+
+
+		var oLi = document.getElementById("test");
+
+		addClass(oLi,"newClassName");
+
+		function addClass(obj,str){
+			var newName = obj.className + " " + str;
+			obj.className = newName;
+		}
+
+		function removeClass(obj,str){
+			var arrClass = obj.className.split(" ");
+			var newArr = [];
+			for(var i = 0;i<arrClass.length;i++){
+				if(arrClass[i] != str){
+					newArr.push(arrClass[i]);
+				}
+			}
+			var newClassName = newArr.join(" ");
+			obj.className = newClassName;
+		}
+
+		removeClass(oLi,"bgc")
+
+	</script>
+</body>
+</html>

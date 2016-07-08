@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><span class="num">5</span>秒后跳转</p>
+	<input type="button" value="停止" class="stop">
+	<input type="button" value="开始" class="start">
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		var n=5;
+		$(".num").text(n);
+		var t = setInterval(redi,1000)
+
+		$(".stop").click(function(){
+
+			clearInterval(t);
+
+		})
+
+		function redi(){
+			n--;
+			$(".num").text(n);
+			if(n == 0){
+				location.href = "http://baidu.com";
+			}
+		}
+
+		$(".start").click(function(){
+
+			t = setInterval(redi,1000)
+
+		})
+
+		
+	</script>
+</body>
+</html>

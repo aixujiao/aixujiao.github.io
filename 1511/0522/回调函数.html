@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>回调函数</title>
+</head>
+<body>
+	<script>
+	//arguments
+		//递归函数
+
+		//回调函数：把一个函数作为一个参数，传给另一个函数或方法。
+
+		// 例：//$().click(function(){})
+		function fun(callback){
+			callback();
+		}
+		fun(function(){
+			console.log("我是回调函数")
+		})
+
+	</script>
+</body>
+</html>

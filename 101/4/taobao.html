@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0px;padding: 0;}
+		.big-box
+		{
+			width: 3800px;
+			height: 450px;
+			
+		}
+		.list
+		{
+			position: relative;
+			left: 410px;
+			top:-35px;
+		}
+		.box1
+		{
+			background-color: pink;
+			width: 950px;
+			height: 450px;
+			float: left;
+		}
+		.box2
+		{
+			background-color: red;
+			width: 950px;
+			height: 450px;
+			float: left;
+		}
+		.box3
+		{
+			background-color: blue;
+			width: 950px;
+			height: 450px;
+			float: left;
+		}
+
+		.box4
+		{
+			background-color: yellow;
+			width: 950px;
+			height: 450px;
+			float: left;
+		}
+		.pic
+		{
+			width: 950px;
+			height: 450px;
+		}
+		/*列表*/
+		.btn
+		{
+			cursor:pointer;
+		}
+		.list li
+		{
+			list-style: none;
+			height: 18px;
+			width: 18px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 18px;
+			float: left;
+		}
+		.color{background-color: #555;}
+		.view
+		{
+			width: 950px;
+			height: 450px;
+			position: absolute;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<div class="big-box">
+			<div class="box box1"><img src="images/1.jpg" class="pic"></div>
+			<div class="box box2"><img src="images/2.jpg" class="pic"></div>
+			<div class="box box3"><img src="images/3.jpg" class="pic"></div>
+			<div class="box box4"><img src="images/4.jpg" class="pic"></div>
+		</div>
+		<ul class='list'>
+			<li class='btn' id='btn' >1</li>
+			<li class='btn' id='btn2'>2</li>
+			<li class='btn' id='btn3'>3</li>
+			<li class='btn' id='btn4'>4</li>
+		</ul>
+	</div>
+
+
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+	// 鼠标经过.btn时
+		$(".btn").mouseenter(function(){
+			// 输入一个变量index，设左边距为-index*图片宽度950px
+			var index=$(this).index();
+			var marginleft=-index*950;
+			$(".big-box").animate({"margin-left":marginleft},1000);
+			// 以下为鼠标滑过变色
+			$(this).addClass('color');
+		$(this).siblings().removeClass('color');
+			
+		})
+		
+
+			
+	</script>
+</body>
+</html>

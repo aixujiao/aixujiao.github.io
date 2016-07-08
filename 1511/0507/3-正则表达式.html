@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// var arr = []; new Array();
+		// var obj = {};
+		// var date = new Date();
+		// Math
+		/*
+		[]：范围
+		{}：指定位数
+		():分组
+		+：一位或多位  {1,}
+		*：零位或多位  {0,}
+		？：零位或一位 {0,1}
+		\d:匹配数字    [0-9]
+		\w:匹配数字字母下划线  [0-9a-zA-Z\_]
+		\s:匹配空格或tab
+		^:开头
+		$:结尾
+		|:或
+		.：匹配全部
+		*/
+		//var reg = new RegExp();
+		 var reg = /^((\d+)[a-z]+)$/;
+
+		var str = "123123123asasfasdf";
+
+		// var result = reg.test(str);
+		var result = reg.exec(str);
+		console.log(result);
+
+
+
+	</script>
+</body>
+</html>

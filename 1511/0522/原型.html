@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型</title>
+</head>
+<body>
+	<script>
+		function Father(){};
+		Father.prototype = {
+			firstName: "李",
+			beatSon : function(){
+				console.log ("打儿子");
+			}
+		}
+		function Son(){};
+		Son.prototype = new Father();
+		var father = new Father();
+		father.beatSon();
+		var son = new Son();
+		son.beatSon()
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.list{
+			list-style: none;float: left;
+		}
+		.btn{
+			width: 150px;
+			height: 30px;
+			background-color: black;
+			color:#555;
+			float: left;
+			line-height: 30px;
+			text-align: center;
+		}
+		.box{
+			width: 600px;
+			height: 400px;
+		}
+		#box1{
+			background-color: yellow;
+		}
+		#box2{
+			background-color: pink;
+			display: none;
+		}
+		#box3{
+			background-color: #0f0;
+			display: none;
+		}
+		#box4{
+			background-color: #0ff;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li class="btn">页面一</li>
+		<li class="btn">页面二</li>
+		<li class="btn">页面三</li>
+		<li class="btn">页面四</li>
+	</ul>
+	<div class="view">
+		<div class="box" id="box1"></div>
+		<div class="box" id="box2"></div>
+		<div class="box" id="box3"></div>
+		<div class="box" id="box4"></div>
+	</div>
+
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(".btn").click(function(){
+			var index = $(this).index()
+			$(".box").eq(index).css("display","block").siblings().css("display","none")
+		})
+	</script>
+</body>
+</html>
