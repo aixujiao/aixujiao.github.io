@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#list li{
+			list-style: none;
+			float: left;
+			width: 20px;
+			height: 20px;
+			text-align:center;
+			line-height: 20px;
+			border-radius: 50%;
+			background-color: #555;
+			margin-left: 15px;
+			cursor: pointer;
+		}
+		.box{
+			background-color: red!important;
+		}
+	</style>
+</head>
+<body>
+	<img src="image/1.jpg" class="pic">
+	<ul id="list">
+		<li class="btn">1</li>
+		<li class="btn">2</li>
+		<li class="btn">3</li>
+		<li class="btn">4</li>
+	</ul>
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		
+		$("#list li").click(function(){
+			var index = $(this).index();
+			var src = "image/"+(index+1)+".jpg";
+			$(".pic").attr("src",src);
+			$(this).addClass("box").siblings().removeClass("box");
+		})
+	</script>
+</body>
+</html>

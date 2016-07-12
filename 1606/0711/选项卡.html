@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#list li{
+			list-style: none;
+			float: left;
+			color:white;
+			width: 150px;
+			height: 40px;
+			background-color: black;
+			border:1px solid #555;
+			text-align: center;
+			line-height: 40px;
+		}
+		.box{
+			width: 456px;
+			height: 300px;
+		}
+		.box1{
+			background-color: yellow;
+		}
+		.box2{
+			background-color: #0ff;
+			display: none;
+		}
+		.box3{
+			background-color: #0f0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>选项卡一</li>
+		<li>选项卡二</li>
+		<li>选项卡三</li>
+	</ul>
+	<div class="view">
+		<div class="box box1"></div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+	</div>
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		$("#list li").click(function(){
+			var index = $(this).index()
+			$(".view .box").eq(index).css("display","block");
+			$(".view .box").eq(index).siblings().css("display","none")
+		})
+	</script>
+</body>
+</html>
