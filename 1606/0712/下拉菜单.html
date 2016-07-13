@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.list{
+			list-style: none;
+			float: left;
+			width: 150px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background-color: black;
+			color: white;
+			border: 1px solid #555
+		}
+		.xl li{
+			list-style: none;
+			width: 149px;
+			height: 28px;
+			background-color: #555;
+			color: black;
+			border: 1px solid black;
+			
+		}
+		.xl{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="btn">
+		<li class="list">
+			<span>蔬菜</span>
+			<ul class="xl">
+				<li>白菜</li>
+				<li>白菜</li>
+				<li>白菜</li>
+				<li>白菜</li>
+				<li>白菜</li>
+			</ul>
+		</li>
+		<li class="list">
+			<span>水果</span>
+			<ul class="xl">
+				<li>苹果</li>
+				<li>苹果</li>
+				<li>苹果</li>
+				<li>苹果</li>
+				<li>苹果</li>
+			</ul>
+		</li>
+		<li class="list">
+			<span>粮食</span>
+			<ul class="xl">
+				<li>馒头</li>
+				<li>馒头</li>
+				<li>馒头</li>
+				<li>馒头</li>
+				<li>馒头</li>
+			</ul>
+		</li>
+		<li class="list">
+			<span>饮品</span>
+			<ul class="xl">
+				<li>汽水</li>
+				<li>汽水</li>
+				<li>汽水</li>
+				<li>汽水</li>
+				<li>汽水</li>
+			</ul>
+		</li>
+	</ul>
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		$("span").mouseenter(function(){
+			$(this).parent().find(".xl").stop().slideDown("slow");
+		}).mouseleave(function(){
+			$(this).parent().find(".xl").stop().slideUp("slow")
+		})
+	</script>
+</body>
+</html>
