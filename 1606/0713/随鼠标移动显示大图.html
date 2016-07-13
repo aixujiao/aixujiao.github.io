@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			height: 0;
+		}
+		.box{
+			width: 900px;
+			height: 300px;
+		}
+		.pic{
+			width: 300px;
+			height: 300px;
+			float: left;
+		}
+		.big-pic img{
+			width: 500px;
+			height: 500px;
+		}
+		.big-pic{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="image/1.jpg" class="pic">
+		<img src="image/2.jpg" class="pic">
+		<img src="image/3.jpg" class="pic">
+	</div>
+	<div class="big-pic"></div>
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		$(".box .pic").mouseenter(function(){
+			
+			var src = $(this).attr("src");
+			var img = "<img src=' "+ src +" '>";
+			$(".big-pic").append(img)
+		}).mousemove(function(event){
+			var x = event.pageX;
+			var y = event.pageY;
+			$(".big-pic").css({"top":(y+20),"left":(x+20)})
+		 }).mouseleave(function(){
+		 	$(".big-pic img").remove()
+		 })
+	</script>
+</body>
+</html>
