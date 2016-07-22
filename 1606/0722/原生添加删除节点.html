@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="txt">
+	<input type="button" value="添加" class="btn">
+	<h2>你喜欢的水果</h2>
+	<ul class="list">
+		<li>苹果<span class="del"> 删除</span></li>
+		<li>香蕉<span class="del"> 删除</span></li>
+		<li>柠檬<span class="del"> 删除</span></li>
+		<li>橘子<span class="del"> 删除</span></li>
+		<li>西瓜<span class="del"> 删除</span></li>
+	</ul>
+
+	<script>
+		var oTxt = document.querySelector(".txt");
+		var oBtn = document.querySelector(".btn");
+		var oList = document.querySelector(".list");
+		var oDel = document.querySelectorAll(".del")
+
+		// 添加节点
+		oBtn.addEventListener("click",function(){
+			var value = oTxt.value;
+			var val = " 删除"
+			var oText = document.createTextNode(value);
+			var oLi = document.createElement("li");
+			
+			oLi.appendChild(oText);
+			oList.appendChild(oLi);
+
+			var spanVal = document.createTextNode(val)
+			var oDel = document.createElement("span")
+			oDel.className = "del";
+
+			oDel.appendChild(spanVal);
+			oLi.appendChild(oDel);
+
+			oTxt.value=""
+		},false)	
+
+
+		//删除节点
+			oList.addEventListener("click",function(event){
+				if(event.target.className == "del"){
+					this.removeChild(event.target.parentNode);
+				}
+			},false)
+				
+
+	</script>
+</body>
+</html>

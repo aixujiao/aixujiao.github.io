@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li class="list">4</li>
+		<li>5</li>
+	</ul>
+
+
+	<script>
+		var oLi = document.querySelector(".list");
+		var otherArr = siblings(oLi);
+		console.log(otherArr)
+
+		function siblings(elem){	
+			var arrlist=elem.parentNode.children;
+			var arr = [];
+			for(var i=0;i<arrlist.length;i++){
+				if(arrlist[i] != elem){
+					arr.push(arrlist[i]);
+				}
+			} 
+			return arr
+		}
+	</script>
+</body>
+</html>

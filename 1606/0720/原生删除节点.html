@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list">
+		<li>苹果<span class="del">删除</span></li>
+		<li>苹果<span class="del">删除</span></li>
+		<li>苹果<span class="del">删除</span></li>
+		<li>苹果<span class="del">删除</span></li>
+		<li>苹果<span class="del">删除</span></li>
+	</ul>
+
+	<script>
+		var oList = document.querySelector("#list");
+		var oDel = document.querySelectorAll(".del");
+		for(var i=0;i<oDel.length;i++){
+			oDel[i].onclick = function(){
+				oList.removeChild(this.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

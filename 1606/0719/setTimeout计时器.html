@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout计时器.html</title>
+</head>
+<body>
+	<p id="txt">爆炸</p>
+	<input type="button" value="解除爆炸" id="btn">
+	<script src="../script/jquery.js"></script>
+	<script>
+		function fun(){
+			$("#txt").text("砰砰！！！")
+		}
+		var t = setTimeout(fun,3000)
+		$("#btn").click(function(){
+			clearTimeout(t)
+		})
+	</script>
+</body>
+</html>

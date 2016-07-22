@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.sign{
+			width: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" class="num1">
+	<input type="text" class="sign">
+	<input type="text" class="num2">
+	<input type="button" value="计算" class="btn">
+	<input type="text" class="result">
+
+	<script>
+		var num1 = document.querySelector(".num1");
+		var sign = document.querySelector(".sign");
+		var num2 = document.querySelector(".num2");
+		var btn = document.querySelector(".btn");
+		var result = document.querySelector(".result");
+
+
+		btn.onclick = function(){
+			var num3=0
+			var strSign = sign.value;
+			switch(strSign){
+				case"+":num3=Number(num1.value)+Number(num2.value);break;
+				case"-":num3=Number(num1.value)-Number(num2.value);break;
+				case"*":num3=Number(num1.value)*Number(num2.value);break;
+				case"/":num3=Number(num1.value)/Number(num2.value);break;
+			}
+			result.value = num3
+		}
+	</script>
+</body>
+</html>

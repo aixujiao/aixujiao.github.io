@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#list li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" class="btn" value="添加">
+	<ul class="list">
+		<li>苹果</li>
+		<li>苹果</li>
+		<li>苹果</li>
+		<li>苹果</li>
+	</ul>
+	<script src="../script/jquery.js"></script>
+	<script>
+		$(".btn").click(function(){
+			var val = prompt('请输入');  
+			var li = $(<li><li/>);
+			li.text(val);
+			$(".list").append(li);
+		
+		})
+	</script>
+</body>
+</html>

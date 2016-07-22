@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">q </div>
+
+	<script>
+		var box = document.querySelector(".box");
+		function addClass(elem,str){
+			if(elem.className){
+				var name1 = elem.className+" "+str;
+				elem.className = name1;
+				
+			}else{
+				elem.className = str;
+			}
+			
+
+		}
+
+
+		addClass(box,"active");
+
+	</script>
+</body>
+</html>

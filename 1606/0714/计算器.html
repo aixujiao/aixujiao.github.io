@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>加减乘除</title>
+
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.view{
+			width: 240px;
+			margin: 50px auto;
+			padding: 10px;
+	}
+		.nums{
+			float: left;
+			
+		}
+		.signs{
+			float: left;
+		}
+		.btn{
+			display: block;
+			float: left;
+			width: 40px;
+			height: 40px;
+			margin-right: 10px;
+			margin-top: 10px;
+			background:rgba(50,50,25,0.8)
+		}
+		.sign{
+			clear: both;
+		}
+		#txt{
+			width: 188px;
+			height: 30px;
+			clear:both;
+			border: 1px solid aqua;
+		}
+		.atv{
+			background:rgba(155,175,200,0.3);
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="view">
+
+		<input type="text" id="txt" placeholder="0">
+		<div>
+		<div class="nums">
+			<div>
+				<input type="button" class="btn num"  value="1">
+				<input type="button" class="btn num"  value="2">
+				<input type="button" class="btn num"  value="3">
+			</div>
+				
+				
+
+			<div>
+				<input type="button" class="btn num"  value="4">
+				<input type="button" class="btn num"  value="5">
+				<input type="button" class="btn num"  value="6">
+			</div>
+				
+				
+			<div>
+				<input type="button" class="btn num"  value="7">
+				<input type="button" class="btn num"  value="8">
+				<input type="button" class="btn num"  value="9">
+			</div>
+
+			<div>				
+				<input type="button" class="btn clear"  value="c">
+				<input type="button" class="btn num"  value="0">
+				<input type="button" class="btn result"  value="=">
+			</div>
+		</div>
+
+			<div class="signs">
+				<input type="button" class="btn sign"  value="+">
+				<input type="button" class="btn sign"  value="-">
+				<input type="button" class="btn sign"  value="*">
+				<input type="button" class="btn sign"  value="/">
+			</div>
+		</div>
+		
+		
+	</div>
+	<script src="../script/jquery.js"></script>
+	<script>
+		var num1 = ""
+		var num2 = ""
+		var sign = ""
+		var num3 = ""
+		$(".num").click(function(){
+			var value = $(this).val();
+			if(sign == ""){
+				num1 += value;
+				$("#txt").val(num1);
+			}else{
+				num2 = $(this).val()
+				$("#txt").val(num2);
+			}
+			
+		})
+
+		$(".sign").click(function(){
+			sign = $(this).val()
+		})
+		$(".result").click(function(){
+			switch(sign){
+				case"+":num3 = Number(num1) + Number(num2);break;
+				case"-":num3 = Number(num1) - Number(num2);break;
+				case"*":num3 = Number(num1) * Number(num2);break;
+				case"/":num3 = Number(num1) / Number(num2);break;
+			}
+			$("#txt").val(num3);
+		});
+
+		$(".clear").click(function(){
+			num1 = ""
+			num2 = ""
+			sign = ""
+			num3 = ""
+			$("#txt").val("")
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.big{
+			width: 400px;
+			height: 400px;
+			background-color: yellow;
+
+		}
+		.center{
+			width: 310px;
+			height: 310px;
+			background-color: #0ff;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+		}
+		.small{
+			width: 200px;
+			height: 200px;
+			background-color: #f0f;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="center">
+			<div class="small"></div>
+		</div>
+	</div>
+	
+	
+
+	<script>
+		var oBig = document.querySelector(".big")
+		var oCenter = document.querySelector(".center")
+		var oSmall = document.querySelector(".small")
+		oBig.addEventListener("click",function(){
+			console.log("我是最大的盒子");
+		},false);
+		oCenter.addEventListener("click",function(){
+			console.log("我是中间的盒子");
+		},false);
+		oSmall.addEventListener("click",function(event){
+			console.log("我是最小的盒子");
+			event.stopPropagation()
+
+		},false);
+	</script>
+</body>
+</html>

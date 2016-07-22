@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#list li{
+			float: left;
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			border: 1px solid blue;
+			text-align: center;
+			line-height: 20px;
+		}
+		.pic{
+			width: 200px;
+			height: 200px;
+		}
+		.red{
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<img src="image/1.jpg" class="pic">
+	<ul id="list">
+		<li class="1">1</li>
+		<li class="2">2</li>
+		<li class="3">3</li>
+		<li class="4">4</li>
+		<li class="5">5</li>
+	</ul>
+
+	<script>
+		var oLi = document.querySelectorAll("li");
+		var oPic = document.querySelector(".pic");
+		var picArr = ["image/1.jpg","image/2.jpg","image/3.jpg","image/4.jpg","image/5.jpg"];
+		// index
+		for(var i= 0;i<oLi.length;i++){
+			oLi[i].onclick = (function(x){
+				return function(){
+					oPic.src = picArr[x];
+					addClass(this,"red");
+					var am = siblings(this);
+					console.log(am)
+					for(var a=0;a<am.length;a++){
+						removeClass(am[a],"red")
+					}
+				}
+			})(i)
+		}
+		// addClass
+		function addClass(elem,str){
+			if(elem.className){
+				var name1 = elem.className+" "+str;
+				elem.className = name1;
+				
+			}else{
+				elem.className = str;
+			}
+		}
+		// removeClass
+		function removeClass(elem,str){
+			var nameStr = elem.className;
+			var nameArr = nameStr.split(" ");
+			var attr=[]
+			for(var i=0;i<nameArr.length;i++){
+				if(nameArr[i]!=str){
+					attr.push(nameArr[i]);
+				}
+			};
+			var newName = attr.join(" ");
+			elem.className = newName;
+		};
+		// slibings
+		function siblings(elem){	
+			var arrlist=elem.parentNode.children;
+			var arr = [];
+			for(var i=0;i<arrlist.length;i++){
+				if(arrlist[i] != elem){
+					arr.push(arrlist[i]);
+				}
+			} 
+			return arr;
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setInterval计时器</title>
+</head>
+<body>
+	<input type="button" id ="stop" value="stop">
+	<input type="button" id ="start" value="start">
+	<script src="../script/jquery.js"></script>
+	<script>
+		var n = 0;
+		function fun(){
+			n++;
+			console.log(n)
+		}
+		var t = setInterval(fun,1000)
+		$("#stop").click(function(){
+			clearInterval(t);
+		})
+		$("#start").click(function(){
+			t = setInterval(fun,1000)
+		})
+	</script>
+</body>
+</html>

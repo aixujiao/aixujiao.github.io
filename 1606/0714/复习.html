@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	.num{
+		width: 20px;
+	}
+
+</style>
+</head>
+<body>
+	<form class="list">
+		<input type="button" value="-" class="btn">
+		<input type="text" class="num" value="0">
+		<input type="button" value="+" class="btn">
+	</form>
+
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		$(".list .btn").click(function(){
+			var btn = $(this).val();
+			var num = $(".num").val()
+			if(btn == "+"){
+				num = Number(num) + 1;
+			};
+			if(btn == "-"){
+				num = Number(num) - 1;
+			};
+			if(num <= 0){
+				num = 0;
+			};
+			$(".num").val(num);
+		})
+	</script>
+</body>
+</html>

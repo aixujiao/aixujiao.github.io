@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" class="btn" value="按钮">
+	<input type="button" class="btn1" value="按键">
+	<input type="button" class="btn2" value="delete">
+	<script>
+		var oBtn = document.querySelector(".btn");
+		var oBtn1 = document.querySelector(".btn1")
+		var oBtn2 = document.querySelector(".btn2")
+		function fun(){
+			alert("fun click")
+		}
+		oBtn.addEventListener("click",function(){
+			alert("first click");
+		},false);
+		oBtn.addEventListener("click",function(){
+			alert("second click");
+		},false);
+
+		
+		oBtn2.addEventListener("click",function(){
+			oBtn1.removeEventListener("click",fun,false)
+		},false);
+		oBtn1.addEventListener("click",fun,false);
+		
+
+	</script>
+</body>
+</html>

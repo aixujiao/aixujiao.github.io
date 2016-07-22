@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style>
+		.box a{
+			display: block;
+			width: 90px;
+			height: 30px;
+			text-decoration: none;
+			background-color: #555;
+			color: white;
+			text-align: center;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		<span class="day"></span>日
+		<span class="hours"></span>:
+		<span class="mins"></span>:
+		<span class="secs"></span>
+	</p>
+	<div class="box"><a href="">点击购买</a></div>
+	<script src ="../script/jquery.js"></script>
+	<script>
+		function fun(){
+			var strTime = "2016-07-19 16:59:58";//目标时间
+			var timeTarget = new  Date(strTime);//把目标时间赋值给当前时间
+			var target = timeTarget.getTime();//目标时间距离时间戳的毫秒数
+			var todayTime = new Date();//获取当前时间
+			var today = todayTime.getTime();//当前时间距离时间戳的毫秒数
+			var millisecond = target - today;//目标时间-当前时间的毫秒数
+			var day = Math.floor(millisecond/(24*60*60*1000))//总毫秒数/天（24*60*60*1000）取整得到天数
+			var dayRemainder = (millisecond%(24*60*60*1000))//总毫秒/天余的毫秒数dayRemainder
+			var hours = Math.floor(dayRemainder/(60*60*1000))//天余的毫秒数/时（60*60*1000）取整得到小时
+			var hourRemainder = (dayRemainder%(60*60*1000))//天的毫秒数/小时余的毫秒数hourRemainder
+			var mins = Math.floor(hourRemainder/(60*1000))//小时的毫秒数/分钟（60*1000）取整得到分钟
+			var minsRemainder = (hourRemainder%(60*1000))//小时毫秒数/分钟余的毫秒数minsRemainder
+			var secs = Math.floor(minsRemainder/(1000))//分钟余的毫秒数/秒1000取整
+			$(".day").text(day);
+			$(".hours").text(hours);
+			$(".mins").text(mins);
+			$(".secs").text(secs);
+			if(day==0&&hours==0&&mins==0&&secs==0){
+				clearInterval(t)
+				$(".box a").css("background-color","red").attr("href","http://baidu.com");
+			}
+		}
+		fun()
+		var 
+		 t= setInterval(fun,1000);
+		
+	</script>
+</body>
+</html>

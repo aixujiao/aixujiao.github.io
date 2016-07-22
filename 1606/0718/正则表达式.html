@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.green{
+			color: green;
+		}
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" class="txt">
+	<div class="yanzheng"></div>
+	<script src="../script/jquery.js"></script>
+	<script>
+		// [] 匹配范围
+		// + 匹配一位或多位
+		// {} 匹配指定位数或范围
+		//^开始 $结束
+		// 有特殊符号的话前面加\
+		// .匹配所有
+		// () 分组
+		// / /g  全局匹配
+
+		var str = "123a456b789c"
+		var re = /[a-z]/g
+		
+		var newStr = str.split(re)
+		console.log(newStr)
+
+
+
+
+
+
+		// $(".txt").blur(function(){
+		// 	var re = /^[0-9]{11}$/;
+		// 	var str = $(".txt").val()
+		// 	var result = re.test(str);//test正则表达式的方法
+		// 	console.log(str);
+		// 	if(result){
+		// 		$(".yanzheng").text("请执行下一步").removeClass("red").addClass("green")
+		// 	}else{
+		// 		$(".yanzheng").text("请输入正确手机号码").removeClass("greem").addClass("red")
+		// 	}
+			
+			
+		// })
+		
+	</script>
+</body>
+</html>

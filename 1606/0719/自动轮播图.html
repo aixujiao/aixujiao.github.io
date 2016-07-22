@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}	
+
+		.pic{
+			width: 1600px;
+		}
+		.pic img{
+			float: left;
+			width: 400px;
+			height: 300px;
+		}
+		.box{
+			width: 400px;
+			height: 300px;
+			overflow: hidden;
+		}
+		.list{
+			margin-left: 140px;
+		}
+		.list li{
+			list-style: none;
+			float: left;
+			display: block;
+			width: 20px;
+			height: 20px;
+			border: 1px solid blue;
+			text-align: center;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="pic">
+			<img src="image/1.jpg">
+			<img src="image/2.jpg">
+			<img src="image/3.jpg">
+			<img src="image/4.jpg">
+		</div>
+	</div>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script src="../script/jquery.js"></script>
+	<script>
+		var n = 0;
+		function fun(){	
+			$(".pic").animate({"margin-left":(-400*n)},500);
+			 n++;
+			 n = n == 4 ? 0 : n;
+			 if(n==4){
+			 	n=0
+			 }
+			 $(".list li").click(function(){
+			 	var index = $(this).index()
+			 	n=index
+			 })
+		}
+		var t = setInterval(fun,1000)
+	</script>
+</body>
+</html>

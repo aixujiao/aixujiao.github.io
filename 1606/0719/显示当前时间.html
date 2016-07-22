@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示当前时间.html</title>
+	<p class="time">
+		<span class="year"></span>年
+		<span class="month"></span>月
+		<span class="day"></span>日
+		<span class="hour"></span>时
+		<span class="minutes"></span>分
+		<span class="seconds"></span>秒
+	</p>
+</head>
+<body>
+	<script src="../script/jquery.js"></script>
+	<script>
+	
+		function fun(){
+			var today = new Date;
+			var year = today.getFullYear();
+			var month = today.getMonth();
+			var yue = month+1
+			var date = today.getDate();
+			var hour = today.getHours();
+			var minutes = today.getMinutes();
+			var seconds = today.getSeconds();
+			$(".year").text(year);
+			$(".month").text(yue+);
+			$(".day").text(date);
+			$(".hour").text(hour);
+			$(".minutes").text(minutes);
+			$(".seconds").text(seconds);
+		}
+		fun();
+		setInterval(fun,1000)
+	</script>
+</body>
+</html>

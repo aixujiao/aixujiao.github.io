@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="num1">
+	<input type="text" class="sign">
+	<input type="text" class="num2">
+	<input type="button" value="求值" class="btn">
+	<input type="text" class="result">
+	<script src="../script/jquery.js"></script>
+	<script>
+
+		// $(".btn").click(function(){
+		// 	var num1 = $(".num1").val();
+		// 	var num2 = $(".num2").val();
+		// 	var sign = $(".sign").val();
+		// 	switch(sign){
+		// 		case"+" : result = Number(num1) + Number(num2);break;
+		// 		case"-" : result = Number(num1) - Number(num2);break;
+		// 		case"*" : result = Number(num1) * Number(num2);break;
+		// 		case"/" : result = Number(num1) / Number(num2);break;
+		// 	}
+		// 	$(".result").val(result)
+		// })
+
+
+
+
+		$(".btn").click(function(){
+			var num1 = $(".num1").val();
+			var num2 = $(".num2").val();
+			var sign = $(".sign").val();
+			if(sign == "+"){
+				var result = Number(num1) + Number(num2)
+			};
+			if(sign == "-"){
+				var result = Number(num1) - Number(num2)
+			}
+			if(sign == "*"){
+				var result = Number(num1) * Number(num2)
+			};
+			if(sign == "/"){
+				var result = Number(num1) / Number(num2)
+			};
+			$(".result").val(result);
+		})
+	</script>
+</body>
+</html>

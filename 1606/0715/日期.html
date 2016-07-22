@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="text">
+			<p class="year"><span年</p>
+			<p class="month"><span月</p>
+			<p class="date"><span日</p>
+			<p class="hour"><span时</p>
+			<p class="minutes"><span分</p>
+			<p class="seconds"><span秒</p>
+	</div>
+	<script src="../script/jquery.js"></script>
+	<script>
+			var today = new Date();
+			var year = today.getFullYear();
+			var month = today.getMonth();
+			var date = today.getDate();
+			var hour = today.getHours();
+			var minutes = today.getMinutes();
+			var seconds = today.getSeconds();
+			$(".year").text(year);
+			$(".month").text(month);
+			$(".date").text(date);
+			$(".hour").text(hour);
+			$(".minutes").text(minutes);
+			$(".seconds").text(seconds);
+		
+		
+	</script>
+</body>
+</html>
